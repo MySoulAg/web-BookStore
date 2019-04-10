@@ -1,0 +1,10 @@
+select  bookmenu.kucun,bookclass.id,bookclass.class from bookmenu,bookclass 
+where bookmenu.cid=bookclass.id
+
+
+
+多表查询、分组查询
+select sum(a.kucun) as allnum,a.id,a.class from 
+(select  bookmenu.kucun,bookclass.id,bookclass.class from bookmenu,bookclass 
+where bookmenu.cid=bookclass.id) as a
+group by a.id
